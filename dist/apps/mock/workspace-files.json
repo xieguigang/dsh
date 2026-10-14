@@ -1,0 +1,179 @@
+{
+  "root": {
+    "name": "G:/Moira",
+    "type": "folder",
+    "children": [
+      {
+        "name": ".codebuddy",
+        "type": "folder",
+        "children": []
+      },
+      {
+        "name": ".git",
+        "type": "folder",
+        "children": []
+      },
+      {
+        "name": ".nuget",
+        "type": "folder",
+        "children": []
+      },
+      {
+        "name": ".pkg",
+        "type": "folder",
+        "children": []
+      },
+      {
+        "name": ".vs",
+        "type": "folder",
+        "children": []
+      },
+      {
+        "name": ".vscode",
+        "type": "folder",
+        "children": []
+      },
+      {
+        "name": "@export",
+        "type": "folder",
+        "children": []
+      },
+      {
+        "name": "assembly",
+        "type": "folder",
+        "children": []
+      },
+      {
+        "name": "docs",
+        "type": "folder",
+        "children": []
+      },
+      {
+        "name": "man",
+        "type": "folder",
+        "children": []
+      },
+      {
+        "name": "R",
+        "type": "folder",
+        "children": []
+      },
+      {
+        "name": "src",
+        "type": "folder",
+        "children": [
+          {
+            "name": ".codebuddy",
+            "type": "folder",
+            "children": []
+          },
+          {
+            "name": ".vs",
+            "type": "folder",
+            "children": []
+          },
+          {
+            "name": "app",
+            "type": "folder",
+            "children": []
+          },
+          {
+            "name": "CDFDxCanvas",
+            "type": "folder",
+            "children": []
+          },
+          {
+            "name": "CFD_ts",
+            "type": "folder",
+            "children": []
+          },
+          {
+            "name": "CFDEngine",
+            "type": "folder",
+            "children": [
+              {
+                "name": "Eulerian",
+                "type": "folder",
+                "children": [
+                  {
+                    "name": "IncompressibleSolver.vb",
+                    "type": "file"
+                  },
+                  {
+                    "name": "StableFluidsSolver.vb",
+                    "type": "file"
+                  }
+                ]
+              },
+              {
+                "name": "Snapshot.vb",
+                "type": "file"
+              },
+              {
+                "name": "VTUExporter.vb",
+                "type": "file"
+              }
+            ]
+          },
+          {
+            "name": "WindTunnelBox",
+            "type": "folder",
+            "children": [
+              {
+                "name": "FormWindTunnel.vb",
+                "type": "file"
+              },
+              {
+                "name": "WindTunnelBox.vbproj",
+                "type": "file"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "test",
+        "type": "folder",
+        "children": [
+          {
+            "name": "FlowVizSelfTest",
+            "type": "folder",
+            "children": [
+              {
+                "name": "FlowVizSelfTest.vbproj",
+                "type": "file"
+              }
+            ]
+          },
+          {
+            "name": "StreamlineDiag",
+            "type": "folder",
+            "children": [
+              {
+                "name": "ChannelTest.vb",
+                "type": "file"
+              },
+              {
+                "name": "Program.vb",
+                "type": "file"
+              }
+            ]
+          },
+          {
+            "name": "logs",
+            "type": "folder",
+            "children": []
+          },
+          {
+            "name": "StreamlineDiag修复与测试报告.md",
+            "type": "file"
+          }
+        ]
+      },
+      {
+        "name": "README.md",
+        "type": "file"
+      }
+    ]
+  }
+}

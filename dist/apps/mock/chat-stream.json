@@ -1,0 +1,206 @@
+{
+  "description": "Scripted streaming events returned by POST /api/sessions/{id}/messages. The mock layer emits them one by one; each event's delayMs simulates network / model latency. Supported types: status / group / text / deliverables / todos / done. The done event also carries turn usage + session stats + token usage + context usage for the dock pills.",
+  "events": [
+    {
+      "type": "status",
+      "delayMs": 350,
+      "text": "Deep diving"
+    },
+    {
+      "type": "group",
+      "delayMs": 500,
+      "label": "Analysis completed",
+      "icon": "sparkle",
+      "children": [
+        {
+          "type": "think",
+          "delayMs": 700,
+          "text": "Let me look at the workspace layout and the most recent session log before answering."
+        },
+        {
+          "type": "tool",
+          "delayMs": 550,
+          "name": "Glob",
+          "args": "**/*.md",
+          "status": "success"
+        },
+        {
+          "type": "tool",
+          "delayMs": 450,
+          "name": "Read",
+          "args": "README.md",
+          "status": "success"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "delayMs": 120,
+      "text": "好的，我先看了一下当前工作区的结构。\n\n"
+    },
+    {
+      "type": "text",
+      "delayMs": 90,
+      "text": "这是一个复刻的 DeepSeek Harness 界面，"
+    },
+    {
+      "type": "text",
+      "delayMs": 90,
+      "text": "所有数据都来自 `mock/*.json`，"
+    },
+    {
+      "type": "text",
+      "delayMs": 90,
+      "text": "网络请求被拦截后按脚本返回。\n\n"
+    },
+    {
+      "type": "todos",
+      "delayMs": 300,
+      "items": [
+        {
+          "text": "Review mock data layer and routing",
+          "state": "done"
+        },
+        {
+          "text": "Extend streaming events for new blocks",
+          "state": "done"
+        },
+        {
+          "text": "Verify every panel against the original",
+          "state": "active"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "delayMs": 450,
+      "label": "Ran commands and searched code",
+      "icon": "terminal",
+      "children": [
+        {
+          "type": "tool",
+          "delayMs": 500,
+          "name": "Glob",
+          "args": "assets/*.js",
+          "status": "success"
+        },
+        {
+          "type": "tool",
+          "delayMs": 600,
+          "name": "Pwsh",
+          "args": "Get-ChildItem mock",
+          "status": "success"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "delayMs": 100,
+      "text": "你可以试试这些操作：\n\n"
+    },
+    {
+      "type": "text",
+      "delayMs": 80,
+      "text": "1. 左下角 **Settings** 切换浅色 / 深色主题；\n"
+    },
+    {
+      "type": "text",
+      "delayMs": 80,
+      "text": "2. 输入框旁的模型 / 权限 / 模式下拉；\n"
+    },
+    {
+      "type": "text",
+      "delayMs": 80,
+      "text": "3. 右侧栏打开工作区文件树并多开文件标签；\n"
+    },
+    {
+      "type": "text",
+      "delayMs": 80,
+      "text": "4. 底部统计 pill 弹出用量 / 上下文详情；\n"
+    },
+    {
+      "type": "text",
+      "delayMs": 80,
+      "text": "5. **Trajectory** 标签查看时间轴与工具调用详情。\n\n"
+    },
+    {
+      "type": "deliverables",
+      "delayMs": 400,
+      "note": "新的教科书基准案例（空通道/通道+障碍）",
+      "files": [
+        {
+          "name": "StreamlineDiag修复与测试报告.md",
+          "desc": "修复与测试报告：三个修复的完整前后对比数据、教科书基准验证",
+          "path": "G:/Moira/test/StreamlineDiag修复与测试报告.md"
+        },
+        {
+          "name": "ChannelTest.vb",
+          "desc": "新的教科书基准案例（空通道/通道+障碍）",
+          "path": "G:/Moira/test/StreamlineDiag/ChannelTest.vb"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "delayMs": 120,
+      "text": "这条回复本身就是由 `mock/chat-stream.json` 驱动逐段打出的。"
+    },
+    {
+      "type": "done",
+      "delayMs": 400,
+      "duration": "8s",
+      "usage": {
+        "label": "63.7M tok",
+        "route": "api.deepseek.com/v1/chat/completions",
+        "cacheHit": "99.7%",
+        "uncachedInput": "309,939 tok",
+        "cachedInput": "63,394,830 tok",
+        "cacheWrite": "0 tok",
+        "output": "3,433 tok"
+      },
+      "stats": {
+        "turns": 2,
+        "steps": 364,
+        "tokPerSec": 213,
+        "tokens": "106M",
+        "cacheHit": "99.7%",
+        "context": 49,
+        "llmTime": "2h 44m 20s",
+        "toolTime": "10m 42s",
+        "avgTTFT": "24s",
+        "tps": "21.9 tok/s",
+        "tokenUsage": {
+          "total": "106,328,026 tok",
+          "cacheHit": "99.7%",
+          "uncachedInput": "310,186 tok",
+          "cachedInput": "105,796,224 tok",
+          "output": "221,616 tok"
+        },
+        "contextUsage": {
+          "percent": "49%",
+          "figures": "~486K / 1M",
+          "rows": [
+            {
+              "label": "System prompt",
+              "value": "~1.5K",
+              "color": "system",
+              "share": 0.01
+            },
+            {
+              "label": "Tool definitions",
+              "value": "~5.5K",
+              "color": "tools",
+              "share": 0.02
+            },
+            {
+              "label": "Messages",
+              "value": "~375K",
+              "color": "messages",
+              "share": 0.97
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
